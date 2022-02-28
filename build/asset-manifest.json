@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "https://tito33.com/static/css/main.b8e2b867.css",
+    "main.js": "https://tito33.com/static/js/main.aa59431d.js",
+    "index.html": "https://tito33.com/index.html",
+    "main.b8e2b867.css.map": "https://tito33.com/static/css/main.b8e2b867.css.map",
+    "main.aa59431d.js.map": "https://tito33.com/static/js/main.aa59431d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b8e2b867.css",
+    "static/js/main.aa59431d.js"
+  ]
+}
