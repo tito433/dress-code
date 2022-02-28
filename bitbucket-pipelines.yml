@@ -22,4 +22,3 @@ pipelines:
             variables:
               FIREBASE_TOKEN: $FIREBASE_TOKEN
               PROJECT_ID: tito33-5e4bb
-              PUBLIC_URL: https://tito33.com
