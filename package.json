@@ -1,0 +1,32 @@
+{
+  "name": "oom.tito33.www",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "^5.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "description": "This repo contains a basic example for deploying applications to Firebase using [firebase-deploy](https://bitbucket.org/atlassian/firebase-deploy/src/master/) pipe.\r It this example we test, build and deploy a simple ReactJS app created with [create-react-app](https://github.com/facebook/create-react-app) to Firebase.",
+  "main": "index.js",
+  "author": "A K M Rezaul Karim",
+  "license": "ISC"
+}

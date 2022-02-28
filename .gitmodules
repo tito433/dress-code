@@ -1,0 +1,3 @@
+[submodule "firebase-quickstart"]
+	path = firebase-quickstart
+	url = https://github.com/firebase/quickstart-js.git
