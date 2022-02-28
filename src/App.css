@@ -40,6 +40,24 @@ body {
 }
 
 .ComingSoon{
-  font-size: 3rem;
+  display: inline-block;
   text-align: center;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translate(-50%, -50%);
+  border: 1px solid #333;
+  padding: 2rem;
+  left: 50%;
+  background: #00693E;
+  color: #fff;
+}
+.ComingSoon h1{
+  display: inline-block;
+  margin: 0;
+  font-size: 3rem;
+}
+.ComingSoon p{
+  margin: 0;
+  font-size: 1.5rem;
 }

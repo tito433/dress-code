@@ -1,3 +1,3 @@
 export default function ComingSoon() {
-    return <h1 className="ComingSoon">11<br/>TITO<br/>11</h1>;
+    return <section className="ComingSoon"><h1>TITO33</h1><p>Coming soon</p></section>;
 }
