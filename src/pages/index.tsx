@@ -1,6 +1,5 @@
 
 import { useDispatch, useSelector } from 'react-redux';
-import AsciiToBin from '../component/AsciiToBin';
 import Month from '../component/Month';
 import StringInput from '../component/StringInput';
 import { setValue } from '../inputSlice';
@@ -14,15 +13,11 @@ export default function IndexPage() {
     const onInputChange =(value:string[])=>{
         dispatch(setValue(value));
     }
-    console.log('inputText',inputText)
     return (
         
     <>
         <div className="input">
             <StringInput onChange={onInputChange}/>
-        </div>
-        <div className="ascii">
-            {inputText.map((it,idx)=> <AsciiToBin char={it} key={`asci-${idx}`}/>)}
         </div>
         <div className='months'>
             <Month month={6} year={2023}/>

@@ -1,15 +1,5 @@
-import { useState } from 'react';
-
-
-function isValidChar(code){
-    if(code>=65 && code<=90){
-        return true;
-    }else if(code>=97 && code<=122){
-        return true;
-    }else if(code==32){
-        return true;
-    }
-}
+import { useEffect, useState } from 'react';
+import {CharToBin} from '../utils';
 
 function SingleInput(props:{
     value: string,
@@ -18,14 +8,19 @@ function SingleInput(props:{
     onDelete: () => void,
     attr: any | undefined,
 }){
-    console.log(props.value, props.attr)
+
+    const [binValue, setBinValue] = useState<string>('');
+
+    useEffect(() => {
+        setBinValue(CharToBin(props.value));
+     }, [props.value]);
+
     const onFocus =(e) =>{
-        e.currentTarget.select();
+        e.target.select();
     }
 
-    const onKeyUp =(e) =>{
-        const code = e.which;
-        console.log(code,e)
+    const onKeyDown =(e) =>{
+        const code = e.keyCode;
         const value = e.target.value.toUpperCase();
         if(code == 8 && value == ''){
             props.onDelete();
@@ -46,9 +41,12 @@ function SingleInput(props:{
         <div className="char">
             <input type="text" 
                 defaultValue={props.value} 
-                onKeyPress={onKeyUp} 
+                onKeyDown={onKeyDown}
                 onChange={onChange} 
                 onFocus={onFocus} {...props.attr}/>
+            <div className='AsciiToBin'>
+                {binValue}
+            </div>
         </div>
     );
 }
@@ -61,7 +59,6 @@ export default function StringInput(props: {
     const [inputText, setInputText] = useState<string[]>([]);
 
     const inputChange = (idx, value)=>{
-        console.log('change',idx,value,inputText)
         const updated = [...inputText];
         if(idx>inputText.length){
             updated.push(value);
@@ -74,10 +71,10 @@ export default function StringInput(props: {
         props.onChange(updated);
     }
     const onDelete = (idx) =>{
-        console.log('got delete command',idx,inputText)
         const updated = [...inputText];
         updated.splice(idx,1);
         setInputText(updated);
+        setCursorPos(updated.length);
     }
 
     return (
