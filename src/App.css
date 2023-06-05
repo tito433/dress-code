@@ -61,3 +61,72 @@ body {
   margin: 0;
   font-size: 1.5rem;
 }
+
+.inputText{
+  display: flex;
+  padding: 1em;
+  border:1px solid #ddd;
+  justify-content: center;
+}
+.inputText .char input{
+  display: flex;
+  font-size: 1.5em;
+  padding: 0.05em;
+  font-weight: bold;
+  width: 2em;
+  height: 2em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.inputText .char+.char{
+  margin-left: 1em;
+}
+.months, .ascii{
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+.month{
+  max-width: 320px;
+  justify-content: center;
+  border:1px solid #ddd;
+  padding: 0.8em;
+  margin: 0.5em;
+}
+.month h5{
+  margin: 0 0 1em;
+}
+.month .dname .nm{
+  margin-bottom: 0.5em;
+  font-size: 0.9em;
+}
+.month .days, .month .dname{
+  display: grid;
+  grid-gap: 0.8rem;
+  text-transform: uppercase;
+  grid-template-columns: repeat(7, 1fr);
+}
+.month .day{
+  position: relative;
+  display: block;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.month .day .sqr{
+  padding-top: 100%;
+}
+.month .day .ct{
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top:50%;left: 50%;right: 0;
+}
+.month .day.blank{
+  border:none;
+}
+.AsciiToBin{
+  display: inline-block;
+  margin: 0.5em;
+  border:1px solid #ddd;
+  padding: 0.5em;
+}
