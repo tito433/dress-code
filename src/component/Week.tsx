@@ -7,7 +7,7 @@ export default function Week(props:{
 }){
     return (
         <div className='week'>
-            {props.days.map((it:TDay, idx) => <WeekDay label={it.label} color={it.color} key={idx}/> )}
+            {props.days.map((it:TDay, idx) => <WeekDay value={it.date} color={it.color} key={idx}/> )}
         </div>
     )
 }

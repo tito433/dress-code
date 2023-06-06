@@ -3,7 +3,6 @@ import {CharToBin} from '../utils';
 
 function SingleInput(props:{
     value: string,
-    isSelected:boolean,
     onKeyPress: (value: string)=>void,
     onDelete: () => void,
     attr: any | undefined,

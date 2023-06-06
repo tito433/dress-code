@@ -1,5 +1,5 @@
 export type TDay = {
-    date: Date | undefined;
+    date: Date ;
     color: string | undefined;
 };
 

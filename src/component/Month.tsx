@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from 'react';
-import {TDay} from '../models';
 import WeekDay from './WeekDay';
 
 export default function Month(props:{
