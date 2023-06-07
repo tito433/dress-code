@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from './inputSlice'
+import appSlice from './inputSlice'
 
 export const store = configureStore({
   reducer: {
-    inputText: counterReducer,
+    memory: appSlice,
   },
 })
 

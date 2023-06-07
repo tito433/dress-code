@@ -8,3 +8,16 @@ export function CharToBin(chr:string){
     }
 }
 
+export function GetBinColor(chr:string){
+    return chr === "1"? 'red' : 'black';
+}
+
+
+export function IsValidDay(date: Date){
+    const dayofweek = date.getDay();
+    if(dayofweek !=0 && dayofweek !=6){
+        return true;
+    }
+    //TODO: include govt holidays?
+    return false;
+}

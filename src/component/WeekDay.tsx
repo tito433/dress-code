@@ -1,3 +1,4 @@
+import * as React from 'react';
 export default function WeekDay(props:{
     value: Date,
     color: string | undefined

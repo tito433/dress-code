@@ -1,3 +1,4 @@
+import * as React from 'react';
 import './App.css';
 import IndexPage from './pages/index';
 

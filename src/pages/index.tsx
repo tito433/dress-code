@@ -1,9 +1,11 @@
 
+import * as React from 'react';
 //import { useDispatch, useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import Month from '../component/Month';
+import Calendar from '../component/Calendar';
 import StringInput from '../component/StringInput';
 import { setValue } from '../inputSlice';
+import DatePicker from '../component/DatePicker';
 //import type { RootState } from '../store';
 
 export default function IndexPage() {
@@ -17,12 +19,16 @@ export default function IndexPage() {
     return (
         
     <>
-        <div className="input">
+        <div className="sect input">
+            <label className='heading'>The message</label>
             <StringInput onChange={onInputChange}/>
         </div>
-        <div className='months'>
-            <Month month={6} year={2023}/>
-            <Month month={7} year={2023}/>
+        <div className="sect">
+            <label className='heading'>Start date</label>
+            <DatePicker />
+        </div>
+        <div className='sect months'>
+            <Calendar />
         </div>
     </>
     );

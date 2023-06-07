@@ -64,7 +64,6 @@ body {
 
 .inputText{
   display: flex;
-  padding: 1em;
   justify-content: center;
 }
 .inputText .char{
@@ -86,6 +85,10 @@ body {
   border-bottom:2px solid #000;
   width: 100%;
   max-width: 75px;
+}
+
+.inputText .char input:focus{
+  outline: none;
 }
 .inputText .char+.char{
   margin-left: 1em;
@@ -133,7 +136,40 @@ body {
 .month .day.blank{
   border:none;
 }
+.month .day.black{
+  background-color: black;
+  color: white;
+}
+.month .day.red{
+  background-color: red;
+  color: white;
+}
+
 .AsciiToBin{
   display: inline-block;
-  padding: 0.5em;
+  padding: 0.1em;
+}
+.sect{
+  margin: 1em;
+  padding:1em;
+}
+.sect .heading{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 0.5em;
+  display: flex;
+  justify-content: center;
+}
+
+.datePicker input{
+  max-width: 60px;
+  font-size: 1.2em;
+  padding: 0.05em;
+  font-weight: bold;
+  height: 2em;
+  text-align: center;
+
 }
