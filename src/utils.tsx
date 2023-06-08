@@ -7,9 +7,9 @@ export function CharToBin(chr:string){
     if(code>64){
         return (code-64).toString(2).padStart(5, '0');
     }else if(code ===32){
-        throw (27).toString(2).padStart(5, '0');
+        return (27).toString(2).padStart(5, '0');
     }else{
-        throw Error(code+' not in range');
+        return '';
     }
 }
 
