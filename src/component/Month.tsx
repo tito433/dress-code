@@ -3,13 +3,13 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import WeekDay from './WeekDay';
 import { TDay } from '../models';
+import { GetMonthName } from '../utils';
 
 export default function Month(props:{
     date:number,
     codes: TDay[]
 }){
 
-    const montNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const [days, setDays] = useState<Date[]>([]);
     const [startGap, setStartGaps] = useState<number>(0);
     const [monthName, setMonthName] = useState<string>('');
@@ -25,13 +25,13 @@ export default function Month(props:{
             updated.push(new Date(curDate));
 			curDate.setDate(curDate.getDate() + 1);
 		}
-        setMonthName(montNames[dt.getMonth()])
+        setMonthName(GetMonthName(dt.getMonth()))
         setDays(updated);
         
     }, [props.date]);
 
     const GetDayColor =(it:Date) =>{
-        const maping = props.codes.find((d=> d.date.getDate() == it.getDate()));
+        const maping = props.codes.find((d=> d.date.getDate() === it.getDate()));
         if(maping){
             return maping.color;
         }

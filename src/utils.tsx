@@ -1,3 +1,6 @@
+
+const montNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
 export function CharToBin(chr:string){
     if(chr == '') return '';
     const code = chr.toUpperCase().charCodeAt(0);
@@ -20,4 +23,8 @@ export function IsValidDay(date: Date){
     }
     //TODO: include govt holidays?
     return false;
+}
+
+export function GetMonthName(month:number){
+    return montNames[month];
 }

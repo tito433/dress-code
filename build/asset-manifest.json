@@ -1,13 +1,13 @@
 {
-  "main.css": "/dress-code/static/css/main.ac3693b6.chunk.css",
-  "main.js": "/dress-code/static/js/main.65920191.chunk.js",
-  "main.js.map": "/dress-code/static/js/main.65920191.chunk.js.map",
-  "static/js/1.ffff318f.chunk.js": "/dress-code/static/js/1.ffff318f.chunk.js",
-  "static/js/1.ffff318f.chunk.js.map": "/dress-code/static/js/1.ffff318f.chunk.js.map",
-  "runtime~main.js": "/dress-code/static/js/runtime~main.f093d971.js",
-  "runtime~main.js.map": "/dress-code/static/js/runtime~main.f093d971.js.map",
-  "static/css/main.ac3693b6.chunk.css.map": "/dress-code/static/css/main.ac3693b6.chunk.css.map",
-  "index.html": "/dress-code/index.html",
-  "precache-manifest.3dfbb2bb07b1036ebc8e6199ff70e296.js": "/dress-code/precache-manifest.3dfbb2bb07b1036ebc8e6199ff70e296.js",
-  "service-worker.js": "/dress-code/service-worker.js"
+  "files": {
+    "main.css": "/dress-code/static/css/main.0da3fc47.css",
+    "main.js": "/dress-code/static/js/main.3c02dd89.js",
+    "index.html": "/dress-code/index.html",
+    "main.0da3fc47.css.map": "/dress-code/static/css/main.0da3fc47.css.map",
+    "main.3c02dd89.js.map": "/dress-code/static/js/main.3c02dd89.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0da3fc47.css",
+    "static/js/main.3c02dd89.js"
+  ]
 }

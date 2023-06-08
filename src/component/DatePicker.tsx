@@ -7,17 +7,17 @@ export default function DatePicker(){
     const dispatch = useDispatch();
     const currDate = useSelector((state: RootState) => new Date(state.memory.startDate))
 
-    const onDayChange =(e) =>{
+    const onDayChange =(e: React.ChangeEvent<HTMLInputElement>) =>{
         const value = e.target.value;
         const updated = new Date(currDate.getFullYear(), currDate.getMonth(), Number(value));
         dispatch(setStartDate(updated.valueOf()));
     }
-    const onMonthChange =(e) =>{
+    const onMonthChange =(e: React.ChangeEvent<HTMLInputElement>) =>{
         const value = e.target.value;
         const updated = new Date(currDate.getFullYear(), Number(value)-1, currDate.getDate());
         dispatch(setStartDate(updated.valueOf()));
     }
-    const onYearChange =(e) =>{
+    const onYearChange =(e: React.ChangeEvent<HTMLInputElement>) =>{
         const value = e.target.value;
         const updated = new Date(Number(value), currDate.getMonth(), currDate.getDate());
         dispatch(setStartDate(updated.valueOf()));

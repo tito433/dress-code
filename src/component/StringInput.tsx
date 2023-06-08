@@ -15,19 +15,19 @@ function SingleInput(props:{
         setBinValue(CharToBin(props.value));
      }, [props.value]);
 
-    const onFocus =(e) =>{
+    const onFocus =(e: React.FocusEvent<HTMLInputElement>) =>{
         e.target.select();
     }
 
-    const onKeyDown =(e) =>{
+    const onKeyDown =(e: any) =>{
         const code = e.keyCode;
         const value = e.target.value.toUpperCase();
-        if(code == 8 && value == ''){
+        if(code === 8 && value === ''){
             props.onDelete();
             return false;
         }
     }
-    const onChange =(e) =>{
+    const onChange =(e: React.ChangeEvent<HTMLInputElement>) =>{
         const value = e.target.value.toUpperCase();
         if(value == ''){
             props.onDelete();
@@ -58,7 +58,7 @@ export default function StringInput(props: {
     const [cursorPos, setCursorPos] = useState<number>(0);
     const [inputText, setInputText] = useState<string[]>([]);
 
-    const inputChange = (idx, value)=>{
+    const inputChange = (idx:number, value:string)=>{
         const updated = [...inputText];
         if(idx>inputText.length){
             updated.push(value);
@@ -70,7 +70,7 @@ export default function StringInput(props: {
         setCursorPos(idx+1)
         props.onChange(updated);
     }
-    const onDelete = (idx) =>{
+    const onDelete = (idx:number) =>{
         const updated = [...inputText];
         updated.splice(idx,1);
         setInputText(updated);
@@ -80,14 +80,14 @@ export default function StringInput(props: {
     return (
         <div className="inputText">
             {inputText.map((it,idx)=> <SingleInput 
-                 attr={cursorPos==idx? {'autoFocus':'autoFocus'}:''} 
+                 attr={cursorPos===idx? {'autoFocus':'autoFocus'}:''} 
                  value={it} 
                  onKeyPress={(e) => inputChange(idx,e)} 
                  onDelete={() => onDelete(idx)}
                  key={`char-${idx}`}/>
             )}
             <SingleInput 
-                attr={cursorPos==inputText.length? {'autoFocus':'autoFocus'}:''} 
+                attr={cursorPos===inputText.length? {'autoFocus':'autoFocus'}:''} 
                 value='' 
                 onKeyPress={(e) => inputChange(inputText.length,e)}
                 onDelete={() => onDelete(inputText.length-1)}
