@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/dress-code/static/css/main.0da3fc47.css",
-    "main.js": "/dress-code/static/js/main.db12fa30.js",
+    "main.js": "/dress-code/static/js/main.d8e8b1fd.js",
     "index.html": "/dress-code/index.html",
     "main.0da3fc47.css.map": "/dress-code/static/css/main.0da3fc47.css.map",
-    "main.db12fa30.js.map": "/dress-code/static/js/main.db12fa30.js.map"
+    "main.d8e8b1fd.js.map": "/dress-code/static/js/main.d8e8b1fd.js.map"
   },
   "entrypoints": [
     "static/css/main.0da3fc47.css",
-    "static/js/main.db12fa30.js"
+    "static/js/main.d8e8b1fd.js"
   ]
 }
