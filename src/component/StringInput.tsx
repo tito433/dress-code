@@ -29,7 +29,7 @@ function SingleInput(props:{
     }
     const onChange =(e: React.ChangeEvent<HTMLInputElement>) =>{
         const value = e.target.value.toUpperCase();
-        if(value == ''){
+        if(value === ''){
             props.onDelete();
             return false;
         }else{

@@ -39,7 +39,7 @@ export default function Month(props:{
     }
     return (
         <div className='month'>
-            <h5>{monthName}</h5>
+            <h5>{monthName} {new Date(props.date).getFullYear()}</h5>
             <div className='dname'>
                 <div className='nm'>Sun</div>
                 <div className='nm'>Mon</div>
