@@ -26,7 +26,7 @@ export default function BitPicker() {
                     </div>
                     <div className='bit double'></div>
                 </label>
-                <label>
+                <label style={{display:'none'}}>
                     <div className="radio-label">
                         <input type="radio" name="radio" value="4" checked={bit === 4}  onChange={onInputChange}/> Quadruple
                     </div>

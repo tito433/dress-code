@@ -1,6 +1,6 @@
-# Dress code ([demo](https://tito433.github.io/dress-code/)) [![pages-build-deployment](https://github.com/tito433/dress-code/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/tito433/dress-code/actions/workflows/pages/pages-build-deployment)
+# Dress code ([demo](https://tito433.github.io/dress-code/)) [![build](https://github.com/tito433/dress-code/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/tito433/dress-code/actions/workflows/pages/pages-build-deployment)
 
-This application converts any text message into wearable dress codes. Consider every day as a bit which can be either zero or one. Say when you wear black shirts will represents zero and red shirts for one. Hence every day you can print or display one bit using black or red dress. In a week you can display an alphabet.
+This application converts any text message into wearable dress codes. Using one bit per day, consider every day as a bit which can be either zero or one. If you wear black dress will represents zero and white dress for one. Hence every day you can print or display one bit using black or white dress. In a week you can display an alphabet. For double bit per day, you split by shirt and pant. Then every day you can represent 2 bits. Say you want to represent binary 10 on a day, then you wear white(1) shirt and black(0) pant.
 
 ## The ASCII table for 5 bits
 
@@ -39,7 +39,7 @@ Then for each alphabet we assign it to a week. So for `T(10100)` your dress code
 | <b>Color</b>  | Red  | Black | Red | Black | Black  |  |  |
 
 You do this for the rest of the alphabets. 
-Now you have the idea. Write a novel or poem or send secret messages. Here's the app user interface:
+Now you have the idea. Write a novel or poem or send secret messages. Here's the app user interface using single bit per day:
 
 ![Demo](public/demo.png)
 
