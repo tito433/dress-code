@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../store';
-import {CharToBin, GetBinColor, IsValidDay} from '../utils';
+import {CharToBin, IsValidDay} from '../utils';
 import Month from './Month';
 import {TDay} from '../models';
 
@@ -11,34 +11,33 @@ type MonthMap= {
 
 export default function Calendar(){
     const inputText = useSelector((state: RootState) => state.memory.value)
-    const startDate = useSelector((state: RootState) => new Date(state.memory.startDate))
+    const startDate = useSelector((state: RootState) => new Date(state.memory.startDate));
+    const bit = useSelector((state: RootState) => state.memory.bit);
     const inputOfBin = inputText.map((it:string)=>CharToBin(it)).join('');
     const curDate = new Date(startDate.getFullYear(),startDate.getMonth(),startDate.getDate());
     let i = 0;
     const monthDistro:MonthMap = {};
-
     while (i<inputOfBin.length) {
         if(IsValidDay(curDate)){
             const key = new Date(curDate.getFullYear(),curDate.getMonth(), 1).valueOf();
             if(!monthDistro[key]){
                 monthDistro[key]=[];
             }
-            const tDay:TDay = {date: new Date(curDate.valueOf()), color: GetBinColor(inputOfBin.charAt(i))}
+            const binPart = inputOfBin.substring(i,i+bit).padStart(bit,"0");
+            const tDay:TDay = {date: new Date(curDate.valueOf()), color: 'color'+binPart}
             monthDistro[key].push(tDay);
-            i++;
+            i+=bit;
         }
         curDate.setDate(curDate.getDate() + 1);
     }
-    console.log(monthDistro);
     const monthList = Object.keys(monthDistro);
-    console.log(monthList);
     return(
-        <>
+        <div className='months'>
             {monthList.length>0 && monthList.map((mn)=>{
                 return <Month date={Number(mn)} codes={monthDistro[Number(mn)]} key={mn}/>
                 })
             }
             
-        </>
+        </div>
     );
 }

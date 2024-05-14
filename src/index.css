@@ -1,4 +1,18 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+html{
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-size: 62.5%;
+}
 body {
+  min-height: 100%;
+  font-size: 1.6rem;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -8,7 +22,321 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ComingSoon{
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translate(-50%, -50%);
+  border: 1px solid #333;
+  padding: 2rem;
+  left: 50%;
+  background: #00693E;
+  color: #fff;
+}
+.ComingSoon h1{
+  display: inline-block;
+  margin: 0;
+  font-size: 3rem;
+}
+.ComingSoon p{
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.inputText{
+  justify-content: center;
+}
+.inputText .char{
+  display: inline-block;
+  border:2px solid #000;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  
+}
+
+.inputText .char input{
+  display: flex;
+  font-size: 2rem;
+  padding: 1rem 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  border:none;
+  border-bottom:2px solid #000;
+  max-width: 6.5rem;
+}
+
+.inputText .char input:focus{
+  outline: none;
+}
+.inputText .char+.char{
+  margin-left: 1em;
+}
+.ascii{
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+.months{
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}
+.month{
+  display: inline-block;
+  max-width: 32rem;
+  justify-content: center;
+  border:1px solid #ddd;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #ababab;
+}
+.month h5{
+  margin: 0 0 1rem;
+}
+.month .dname .nm{
+  margin-bottom: 0.5em;
+  font-size: 0.9em;
+}
+.month .days, .month .dname{
+  display: grid;
+  grid-gap: 0.8rem;
+  text-transform: uppercase;
+  grid-template-columns: repeat(7, 1fr);
+}
+.month .day{
+  position: relative;
+  display: block;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.month .day .sqr{
+  padding-top: 100%;
+}
+.month .day .ct{
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top:50%;left: 50%;right: 0;
+  z-index: 10;
+}
+.month .day.blank{
+  border:none;
+}
+.month .day.color0, .month .day.color00, .month .day.color0000{
+  background-color: black;
+  color: white;
+}
+.month .day.color1,.month .day.color11, .month .day.color1111{
+  background-color: white;
+  color: black;
+}
+
+.month .day.color01::before, .month .day.color01::after,
+.month .day.color10::before, .month .day.color10::after{
+  content: '';
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  left: 0;
+}
+.month .day.color1, .month .day.color0, .month .day.color01, .month .day.color10{
+  color: #a19d9d;
+}
+.month .day.color01::before{
+  background-color: black;
+  top:0;
+}
+.month .day.color01::after{
+  background-color: white;
+  bottom:0;
+}
+.month .day.color10::before{
+  background-color: white;
+  top:0;
+}
+.month .day.color10::after{
+  background-color: black;
+  bottom:0;
+}
+
+
+
+.color0001 {
+  background: linear-gradient(to right, black 25%, white 25%, white 75%, black 75%);
+}
+
+.color0010 {
+  background: linear-gradient(to bottom, black 50%, white 50%);
+}
+
+.color0011 {
+  background: linear-gradient(to bottom, black 25%, white 25%, white 75%, black 75%);
+}
+
+.color0100 {
+  background: linear-gradient(to right, white 50%, black 50%);
+}
+
+.color0101 {
+  background: linear-gradient(to right, white 25%, black 25%, black 75%, white 75%);
+}
+
+.color0110 {
+  background: linear-gradient(to bottom, white 50%, black 50%);
+}
+
+.color0111 {
+  background: linear-gradient(to bottom, white 25%, black 25%, black 75%, white 75%);
+}
+
+.color1000 {
+  background: linear-gradient(to right, black 50%, white 50%);
+}
+
+.color1001 {
+  background: linear-gradient(to right, black 25%, white 25%, white 75%, black 75%);
+}
+
+.color1010 {
+  background: linear-gradient(to bottom, black 50%, white 50%);
+}
+
+.color1011 {
+  background: linear-gradient(to bottom, black 25%, white 25%, white 75%, black 75%);
+}
+
+.color1100 {
+  background: linear-gradient(to right, white 50%, black 50%);
+}
+
+.color1101 {
+  background: linear-gradient(to right, white 25%, black 25%, black 75%, white 75%);
+}
+
+.color1110 {
+  background: linear-gradient(to bottom, white 50%, black 50%);
+}
+
+
+.AsciiToBin{
+  display: inline-block;
+  padding: 0.1rem;
+}
+.sect{
+  padding:1.5rem;
+}
+.sect .heading{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.datePicker input{
+  max-width: 7rem;
+  font-size: 1.2em;
+  padding: 0.75rem 0;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1px;
+}
+.mb{
+  margin-bottom: 1.5rem;
+}
+
+.bitPicker {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+}
+.bitPicker label {
+  align-items: center;
+  cursor: pointer;
+}
+
+.bitPicker .bit{
+  display: inline-block;
+  width: 6.4rem;
+  height: 6.4rem;
+  position: relative;
+  border: 1px solid #ddd;
+}
+.bitPicker .bit.single, .bitPicker .bit.double{
+  background-color: #000;
+}
+
+.bitPicker .bit.double::after{
+  content: '';
+  position: absolute;
+  top:0;
+  height: 50%;
+  width: 100%;
+  background-color: #fff;
+  left: 0;
+}
+
+.bitPicker .bit.quadruple::before, .bitPicker .bit.quadruple::after{
+  content: '';
+  position: absolute;
+  background-color: #000;
+}
+.bitPicker .bit.quadruple::before{
+  top:0;
+  height: 50%;
+  width: 50%;
+  left: 0;
+}
+.bitPicker .bit.quadruple::after{
+  bottom:0;
+  height: 50%;
+  width: 50%;
+  right: 0;
+}
+
+.bitPicker .radio-label {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
 }

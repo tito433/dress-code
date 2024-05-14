@@ -14,7 +14,7 @@ export function CharToBin(chr:string){
 }
 
 export function GetBinColor(chr:string){
-    return chr === "1"? 'red' : 'black';
+    return chr === "1"? 'black':'';
 }
 
 
