@@ -23,7 +23,7 @@ export default function Calendar(){
             if(!monthDistro[key]){
                 monthDistro[key]=[];
             }
-            const binPart = inputOfBin.substring(i,i+bit).padStart(bit,"0");
+            const binPart = inputOfBin.substring(i,i+bit).padEnd(bit,"0");
             const tDay:TDay = {date: new Date(curDate.valueOf()), color: 'color'+binPart}
             monthDistro[key].push(tDay);
             i+=bit;
