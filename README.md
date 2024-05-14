@@ -1,4 +1,4 @@
-# Dress code ([demo](https://tito433.github.io/dress-code/))
+# Dress code ([demo](https://tito433.github.io/dress-code/)) [![pages-build-deployment](https://github.com/tito433/dress-code/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/tito433/dress-code/actions/workflows/pages/pages-build-deployment)
 
 This application converts any text message into wearable dress codes. Consider every day as a bit which can be either zero or one. Say when you wear black shirts will represents zero and red shirts for one. Hence every day you can print or display one bit using black or red dress. In a week you can display an alphabet.
 
