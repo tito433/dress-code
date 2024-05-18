@@ -2,24 +2,6 @@
 
 This application converts any text message into wearable dress codes. Using one bit per day, consider every day as a bit which can be either zero or one. If you wear black dress will represents zero and white dress for one. Hence every day you can print or display one bit using black or white dress. In a week you can display an alphabet. For double bit per day, you split by shirt and pant. Then every day you can represent 2 bits. Say you want to represent binary 10 on a day, then you wear white(1) shirt and black(0) pant.
 
-## The ASCII table for 5 bits
-
-| Alphabet  | ASCII value | Binary | Alphabet  | ASCII value | Binary |
-| ------------- | ------------- | ------------- |------------- | ------------- | ------------- |
-| A  | 1  | 00001 | N  | 14  | 01110 |
-| B  | 2  | 00010 | O  | 15  | 01111 |
-| C  | 3  | 00011 | P  | 16  | 10000 |
-| D  | 4  | 00100 | Q  | 17  | 10001 |
-| E  | 5  | 00101 | R  | 18  | 10010 |
-| F  | 6  | 00110 | S  | 19  | 10011 |
-| G  | 7  | 00111 | T  | 20  | 10100 |
-| H  | 8  | 01000 | U  | 21  | 10101 |
-| I  | 9  | 01001 | V  | 22  | 10110 |
-| J  | 10  | 01010 | W  | 23  | 10111 |
-| K  | 11  | 01011 | X  | 24  | 11000 |
-| L  | 12  | 01100 | Y  | 25  | 11001 |
-| M  | 13  | 01101 | Z  | 26  | 11010 |
-|< space >| 27 |11011||||
 
 
 ### `Example`
@@ -27,20 +9,18 @@ This application converts any text message into wearable dress codes. Using one 
 Say you want to print `TIME`. First, We split each alphabet and get binary values:
 | Alphabet  | ASCII value | Binary |
 | ------------- | ------------- | ------------- |
-| T  | 20  | 10100 |
-| I  | 9  | 01001 |
-| M  | 13  | 01101 |
-| E  | 5  | 00101 |
+| T  | 84  | 01010100 |
+| I  | 73  | 01001001|
+| M  | 77 | 01001101 |
+| E  | 69  | 01000101 |
 
-Then for each alphabet we assign it to a week. So for `T(10100)` your dress code for a week will be:
-| Days | Sunday  | Monday | Tuesday | Wednesday | Thursday  | Friday | Saturday |
-| ------------- | -------------  | ------------- | ------------- | ------------- | -------------  | ------------- | ------------- |
-| <b>Binary</b> | 1  | 0 | 1 | 0 | 0  |  |  |
-| <b>Color</b>  | Red  | Black | Red | Black | Black  |  |  |
+Then for each bit we assign it to a day. So for `T(01010100)` your dress code for two weeks will be:
+| Days: | Sunday  | Monday | Tuesday | Wednesday | Thursday  | Friday | Saturday | Sunday |
+| ------------- | -------------  | ------------- | ------------- | ------------- | -------------  | ------------- | ------------- | ------------- |
+| <b>Binary:</b> |0|1|0|1|0|1|0|0|
+| <b>Color:</b>  |Black|White|Black|White|Black|White|Black|Black|
 
 You do this for the rest of the alphabets. 
-Now you have the idea. Write a novel or poem or send secret messages. Here's the app user interface using single bit per day:
-
-![Demo](public/demo.png)
+Now you have the idea. Write a novel or poem or send secret messages.
 
 >Your only limitation is your imagination.

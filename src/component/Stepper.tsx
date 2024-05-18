@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 
+export interface Step {
+  component: React.ReactNode;
+  nextButtonText?: string;
+}
 // Stepper Component
-const Stepper = ({ steps }: { steps: any[] }) => {
+export const Stepper = ({ steps }: { steps: Step[] }) => {
   const [currentStep, setCurrentStep] = useState(0);
 
   const goToNextStep = () => {
@@ -23,12 +27,12 @@ const Stepper = ({ steps }: { steps: any[] }) => {
       </div>
       <div className="step-navigation">
         {currentStep > 0 && (
-          <button onClick={goToPreviousStep}>
-            {steps[currentStep].prevButtonText || 'Previous'}
+          <button onClick={goToPreviousStep} className='back'>
+            Back
           </button>
         )}
         {currentStep < steps.length - 1 && (
-          <button onClick={goToNextStep}>
+          <button onClick={goToNextStep} className='next'>
             {steps[currentStep].nextButtonText || 'Next'}
           </button>
         )}
@@ -36,5 +40,3 @@ const Stepper = ({ steps }: { steps: any[] }) => {
     </div>
   );
 };
-
-export default Stepper;

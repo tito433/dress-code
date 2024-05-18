@@ -130,7 +130,6 @@ body {
 }
 .month .dname .nm{
   margin-bottom: 0.5em;
-  font-size: 0.9em;
 }
 .month .days, .month .dname{
   display: grid;
@@ -273,11 +272,10 @@ body {
 
 .datePicker input{
   max-width: 7rem;
-  font-size: 1.2em;
   padding: 0.75rem 0;
+  font-size: 1.6rem;
   font-weight: bold;
   text-align: center;
-  margin-top: 1px;
 }
 .mb{
   margin-bottom: 1.5rem;
@@ -339,6 +337,15 @@ body {
 }
 
 .AsciiMessage textarea{
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.step-content{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.step-navigation button{
+  padding: 1rem 2.5rem;
   font-size: 1.6rem;
 }
 

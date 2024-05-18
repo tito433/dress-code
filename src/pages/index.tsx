@@ -1,45 +1,22 @@
 
-import * as React from 'react';
-//import { useDispatch, useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import Calendar from '../component/Calendar';
+
 import AsciiMessage from '../component/AsciiMessage';
-import { setValue } from '../inputSlice';
 import BinMessage from '../component/BinMessage';
-import DatePicker from '../component/DatePicker';
 import BitPicker from '../component/BitPicker';
-//import type { RootState } from '../store';
+import Calendar from '../component/Calendar';
+import DatePicker from '../component/DatePicker';
+import { Step, Stepper } from '../component/Stepper';
 
 export default function IndexPage() {
-    const dispatch = useDispatch();
 
-    //const inputText = useSelector((state: RootState) => state.inputText.value)
+    const Step1 = () => <div><AsciiMessage /> <BitPicker /> <DatePicker /></div>;
+    const Step2 = () => <div><BinMessage />  <Calendar /></div>;
+    const steps: Step[] = [
+        { component: <Step1 />, nextButtonText: 'Finish' },
+        { component: <Step2 /> },
+    ];
 
-    const onInputChange =(value:string)=>{
-        dispatch(setValue(value));
-    }
     return (
-        
-    <>
-        <div className="sect input">
-            <label className='heading'>The message</label>
-            <AsciiMessage onChange={onInputChange}/>
-        </div>
-        <div className="sect">
-            <label className='heading'>The binaries</label>
-            <BinMessage />
-        </div>
-        <div className="sect">
-            <label className='heading'>Bit per day</label>
-            <BitPicker />
-        </div>
-        <div className="sect">
-            <label className='heading'>Start date</label>
-            <DatePicker />
-        </div>
-        <div className='sect'>
-            <Calendar />
-        </div>
-    </>
+        <Stepper steps={steps} />
     );
 }
