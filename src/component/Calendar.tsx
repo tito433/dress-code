@@ -12,13 +12,15 @@ type MonthMap= {
 export default function Calendar(){
     const inputText = useSelector((state: RootState) => state.memory.value)
     const startDate = useSelector((state: RootState) => new Date(state.memory.startDate));
+    const excludeWeekend = useSelector((state: RootState) => state.memory.excludeWeekend);
+
     const bit = useSelector((state: RootState) => state.memory.bit);
-    const inputOfBin = inputText.map((it:string)=>CharToBin(it)).join('');
+    const inputOfBin = inputText.split('').map(CharToBin).join('');
     const curDate = new Date(startDate.getFullYear(),startDate.getMonth(),startDate.getDate());
     let i = 0;
     const monthDistro:MonthMap = {};
     while (i<inputOfBin.length) {
-        if(IsValidDay(curDate)){
+        if(IsValidDay(curDate, excludeWeekend)){
             const key = new Date(curDate.getFullYear(),curDate.getMonth(), 1).valueOf();
             if(!monthDistro[key]){
                 monthDistro[key]=[];

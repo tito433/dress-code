@@ -3,14 +3,8 @@ const montNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July
 
 export function CharToBin(chr:string){
     if(chr === '') return '';
-    const code = chr.toUpperCase().charCodeAt(0);
-    if(code>64){
-        return (code-64).toString(2).padStart(5, '0');
-    }else if(code ===32){
-        return (27).toString(2).padStart(5, '0');
-    }else{
-        return '';
-    }
+    const code = chr.charCodeAt(0);
+    return code.toString(2).padStart(8, '0');
 }
 
 export function GetBinColor(chr:string){
@@ -18,13 +12,14 @@ export function GetBinColor(chr:string){
 }
 
 
-export function IsValidDay(date: Date){
+export function IsValidDay(date: Date, excludeWeekend = true){
     const dayofweek = date.getDay();
-    if(dayofweek !==0 && dayofweek !==6){
-        return true;
+    const isWeekend = dayofweek === 0 || dayofweek === 6;
+    if(isWeekend && excludeWeekend ){
+        return false;
     }
     //TODO: include govt holidays?
-    return false;
+    return true;
 }
 
 export function GetMonthName(month:number){

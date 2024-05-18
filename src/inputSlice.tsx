@@ -1,15 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export interface CounterState {
-  value: string[],
+  value: string,
   bit: number,
-  startDate: number
+  startDate: number,
+  excludeWeekend: boolean
 }
 
 const initialState: CounterState = {
-  value: [],
+  value: '',
   bit: 1,
-  startDate: new Date().valueOf()
+  startDate: new Date().valueOf(),
+  excludeWeekend: true
 }
 
 export const appSlice = createSlice({
@@ -25,10 +27,13 @@ export const appSlice = createSlice({
     setStartDate: (state, action) => {
       state.startDate =  action.payload ;
     },
+    setExcludeWeekend: (state, action) => {
+      state.excludeWeekend =  action.payload ;
+    },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setValue, setStartDate, setBit } = appSlice.actions
+export const { setValue, setStartDate, setBit, setExcludeWeekend } = appSlice.actions
 
 export default appSlice.reducer

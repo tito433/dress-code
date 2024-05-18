@@ -3,8 +3,9 @@ import * as React from 'react';
 //import { useDispatch, useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import Calendar from '../component/Calendar';
-import StringInput from '../component/StringInput';
+import AsciiMessage from '../component/AsciiMessage';
 import { setValue } from '../inputSlice';
+import BinMessage from '../component/BinMessage';
 import DatePicker from '../component/DatePicker';
 import BitPicker from '../component/BitPicker';
 //import type { RootState } from '../store';
@@ -14,7 +15,7 @@ export default function IndexPage() {
 
     //const inputText = useSelector((state: RootState) => state.inputText.value)
 
-    const onInputChange =(value:string[])=>{
+    const onInputChange =(value:string)=>{
         dispatch(setValue(value));
     }
     return (
@@ -22,7 +23,11 @@ export default function IndexPage() {
     <>
         <div className="sect input">
             <label className='heading'>The message</label>
-            <StringInput onChange={onInputChange}/>
+            <AsciiMessage onChange={onInputChange}/>
+        </div>
+        <div className="sect">
+            <label className='heading'>The binaries</label>
+            <BinMessage />
         </div>
         <div className="sect">
             <label className='heading'>Bit per day</label>
