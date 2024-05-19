@@ -3,23 +3,25 @@ import { TDay } from '../models';
 import type { RootState } from '../store';
 import { CharToBin, IsValidDay } from '../utils';
 import Month from './Month';
+import { DatePickerConfig } from './DatePicker';
 
 type MonthMap = {
     [id: number]: TDay[]
 }
 
-export default function Calendar() {
-    const inputText = useSelector((state: RootState) => state.memory.value)
-    const startDate = useSelector((state: RootState) => new Date(state.memory.startDate));
-    const excludeWeekend = useSelector((state: RootState) => state.memory.excludeWeekend);
+export default function Calendar(props: {
+    value: string;
+    dateConfig: DatePickerConfig;
+}) {
 
     const bit = useSelector((state: RootState) => state.memory.bit);
-    const inputOfBin = inputText.split('').map(CharToBin).join('');
-    const curDate = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+    const inputOfBin = props.value.split('').map(CharToBin).join('');
+    const curDate = new Date(props.dateConfig.startDate.getFullYear(), props.dateConfig.startDate.getMonth(), props.dateConfig.startDate.getDate());
+
     let i = 0;
     const monthDistro: MonthMap = {};
     while (i < inputOfBin.length) {
-        if (IsValidDay(curDate, excludeWeekend)) {
+        if (IsValidDay(curDate, props.dateConfig.excludeWeekend)) {
             const key = new Date(curDate.getFullYear(), curDate.getMonth(), 1).valueOf();
             if (!monthDistro[key]) {
                 monthDistro[key] = [];

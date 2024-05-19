@@ -23,7 +23,7 @@ body {
 
 .App {
   text-align: center;
-  padding: 2.4rem;
+  padding: 1.5rem;
 }
 
 .App-logo {
@@ -122,8 +122,10 @@ body {
   justify-content: center;
   border:1px solid #ddd;
   padding: 1rem;
-  margin: 1rem;
   background-color: #ababab;
+}
+.month+.month{
+  margin-top: 1.5rem;
 }
 .month h5{
   margin: 0 0 1rem;
@@ -352,10 +354,12 @@ body {
   flex-direction: column;
   justify-content: center;
   border: 1px solid #ddd;
-  margin-bottom: 1.6rem;
   background-color: #f9f9f9;
-
 }
+.Window+.Window {
+  margin-top: 1.5rem;
+}
+
 .Window header{
   display: flex;
   justify-content: space-between;
@@ -392,5 +396,7 @@ body {
 @media (min-width: 768px) { 
   .month{
     max-width: 42rem;
+    display: inline-block;
+    margin-left: 1.5rem;
   }
 }

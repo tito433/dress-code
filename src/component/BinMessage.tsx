@@ -1,19 +1,23 @@
 import * as React from 'react';
-import { useSelector } from 'react-redux';
-import type { RootState } from '../store';
 import { CharToBin } from '../utils';
 
-export default function BinMessage() {
-    const inputText = useSelector((state: RootState) => state.memory.value)
-    const inputOfBin = inputText.split('').map(CharToBin).join(' ');
-    const render = () =>
-    (
-        <div className="sect">
-            <label className='heading'>The binaries</label>
-            <div className='BinMessage'>
-                {inputOfBin}
-            </div>
-        </div>
-    )
-    return inputText.length > 0 ? render() : null;
+export default function BinMessage(props: {
+    value: string;
+}) {
+    const render = () => {
+        if (props.value.length > 0) {
+            const inputOfBin = props.value.split('').map(CharToBin).join(' ');
+            return (
+                <div className="sect">
+                    <label className='heading'>The binaries</label>
+                    <div className='BinMessage'>
+                        {inputOfBin}
+                    </div>
+                </div>
+            )
+        } else {
+            return null;
+        }
+    }
+    return render();
 }
