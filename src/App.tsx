@@ -3,8 +3,8 @@ import IndexPage from './pages/index';
 
 export default function App(){
     return (
-      <div className="App">
+      <main className="App">
         <IndexPage />
-      </div>
+      </main>
     );
 }

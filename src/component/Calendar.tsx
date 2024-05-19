@@ -34,7 +34,7 @@ export default function Calendar() {
     const monthList = Object.keys(monthDistro);
     return monthList.length > 0 ? (
         <div className='sect'>
-            <label className='heading'>Dress code</label>
+            <label className='heading'>The schedule</label>
             <div className='months'>
                 {monthList.map((mn) =>
                     <Month date={Number(mn)} codes={monthDistro[Number(mn)]} key={mn} />

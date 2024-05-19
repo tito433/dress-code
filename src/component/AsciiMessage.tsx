@@ -18,7 +18,7 @@ export default function AsciiMessage() {
                 <textarea
                     value={inputText}
                     onChange={(e) => onInputChange(e.target.value)}
-                    placeholder="Enter your message here"
+                    placeholder="Enter your message"
                 />
             </div>
         </div>
